@@ -1,7 +1,7 @@
 "use strict";
 
 const div = document.getElementById("div");
-document.querySelector(".number").textContent = "❖";
+// document.querySelector(".number").textContent = "❖";
 document.querySelector(".score").textContent = "20";
 
 const head = document.createElement("h3");
@@ -14,7 +14,6 @@ head.textContent = "Let's play a guessing game!";
 div.appendChild(head);
 
 const secretNumber = Math.trunc(Math.random() * 10) + 1; // the 1 is to make it exactly 10 choices
-document.querySelector(".number").textContent = secretNumber;
 
 // creating a variable decrease the number of times a user plays
 let scoreCheck = 5;
@@ -37,6 +36,7 @@ document.querySelector(".check").addEventListener("click", function () {
     document.querySelector(".message").textContent = "No number";
   } else if (guessNum === secretNumber) {
     document.querySelector(".message").textContent = "You WON!";
+    document.querySelector(".number").textContent = secretNumber;
   } else if (guessNum > secretNumber) {
     scoreRepeat(); // this is a declared function used to for repeated text
   } else if (guessNum < secretNumber) {
